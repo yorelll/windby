@@ -1,0 +1,135 @@
+:root {
+    --epcl-font-family: "DM Sans", sans-serif;
+    --epcl-title-font-family: "Urbanist", sans-serif;
+    --epcl-background-color: #FAF8FF;
+    --epcl-boxes-background-color: #ffffff;
+    --epcl-border-color: #E9E8FF;
+    --epcl-boxes-border-color: #E9E8FF;
+    --epcl-secondary-color: #FF2AAC;
+    --ghost-accent-color: #6A4EE9;
+    
+    /* Additional Zento variables */
+    --epcl-main-text-color: #282424;
+    --epcl-light-text-color: #6B6969;
+    --epcl-small-border-radius: 8px;
+    --epcl-medium-border-radius: 12px;
+    --epcl-large-border-radius: 20px;
+}
+
+/* Tag color classes */
+.ctag-3-css .epcl-number,
+.ctag-3-css.epcl-button,
+.siblings .ctag-3-css,
+div.tags a.ctag-3-css:before,
+div.tags.fill-color a.ctag-3-css,
+.category-image.ctag-3-css,
+.epcl-post-carousel article.ctag-3-css { 
+    background: #227dff !important; 
+}
+.ctag-3-css.overlay-effect .image-container:before { 
+    background: #227dff !important; 
+}
+
+.ctag-code .epcl-number,
+.ctag-code.epcl-button,
+.siblings .ctag-code,
+div.tags a.ctag-code:before,
+div.tags.fill-color a.ctag-code,
+.category-image.ctag-code,
+.epcl-post-carousel article.ctag-code { 
+    background: #ff2ed9 !important; 
+}
+.ctag-code.overlay-effect .image-container:before { 
+    background: #ff2ed9 !important; 
+}
+
+.ctag-5-databases .epcl-number,
+.ctag-5-databases.epcl-button,
+.siblings .ctag-5-databases,
+div.tags a.ctag-5-databases:before,
+div.tags.fill-color a.ctag-5-databases,
+.category-image.ctag-5-databases,
+.epcl-post-carousel article.ctag-5-databases { 
+    background: #5751ff !important; 
+}
+.ctag-5-databases.overlay-effect .image-container:before { 
+    background: #5751ff !important; 
+}
+
+.ctag-6-deployment .epcl-number,
+.ctag-6-deployment.epcl-button,
+.siblings .ctag-6-deployment,
+div.tags a.ctag-6-deployment:before,
+div.tags.fill-color a.ctag-6-deployment,
+.category-image.ctag-6-deployment,
+.epcl-post-carousel article.ctag-6-deployment { 
+    background: #2a2728 !important; 
+}
+.ctag-6-deployment.overlay-effect .image-container:before { 
+    background: #2a2728 !important; 
+}
+
+.ctag-guides .epcl-number,
+.ctag-guides.epcl-button,
+.siblings .ctag-guides,
+div.tags a.ctag-guides:before,
+div.tags.fill-color a.ctag-guides,
+.category-image.ctag-guides,
+.epcl-post-carousel article.ctag-guides { 
+    background: #3aa9fd !important; 
+}
+.ctag-guides.overlay-effect .image-container:before { 
+    background: #3aa9fd !important; 
+}
+
+.ctag-2-html .epcl-number,
+.ctag-2-html.epcl-button,
+.siblings .ctag-2-html,
+div.tags a.ctag-2-html:before,
+div.tags.fill-color a.ctag-2-html,
+.category-image.ctag-2-html,
+.epcl-post-carousel article.ctag-2-html { 
+    background: #ff8e51 !important; 
+}
+.ctag-2-html.overlay-effect .image-container:before { 
+    background: #ff8e51 !important; 
+}
+
+.ctag-4-javascript .epcl-number,
+.ctag-4-javascript.epcl-button,
+.siblings .ctag-4-javascript,
+div.tags a.ctag-4-javascript:before,
+div.tags.fill-color a.ctag-4-javascript,
+.category-image.ctag-4-javascript,
+.epcl-post-carousel article.ctag-4-javascript { 
+    background: #ffcb29 !important; 
+}
+.ctag-4-javascript.overlay-effect .image-container:before { 
+    background: #ffcb29 !important; 
+}
+
+.ctag-sql .epcl-number,
+.ctag-sql.epcl-button,
+.siblings .ctag-sql,
+div.tags a.ctag-sql:before,
+div.tags.fill-color a.ctag-sql,
+.category-image.ctag-sql,
+.epcl-post-carousel article.ctag-sql { 
+    background: #f95353 !important; 
+}
+.ctag-sql.overlay-effect .image-container:before { 
+    background: #f95353 !important; 
+}
+
+.ctag-tech .epcl-number,
+.ctag-tech.epcl-button,
+.siblings .ctag-tech,
+div.tags a.ctag-tech:before,
+div.tags.fill-color a.ctag-tech,
+.category-image.ctag-tech,
+.epcl-post-carousel article.ctag-tech { 
+    background: #4775ff !important; 
+}
+.ctag-tech.overlay-effect .image-container:before { 
+    background: #4775ff !important; 
+}

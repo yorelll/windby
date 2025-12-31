@@ -1,13 +1,79 @@
 {{!< default}}
 
-<div class="gh-outer">
-<main class="site-main gh-inner">
+<!-- Intro/Hero Section -->
+<div class="intro-text large-section np-bottom grid-container np-mobile epcl-flex">
+    <div class="left grid-50 tablet-grid-55">
+        <div class="text">
+            {{#if @site.description}}
+                <h1 class="title ularge fw-medium">{{@site.description}}</h1>
+            {{else}}
+                <h1 class="title ularge fw-medium">Welcome to <span class="highlight">{{@site.title}}</span></h1>
+            {{/if}}
+        </div>
+        <form class="subscribe-form" data-members-form="subscribe">
+            <label class="title small" for="subscribe-email">Let's connect</label> 
+            <div class="form-group">
+                <input id="subscribe-email" type="email" name="email" class="inputbox large" required placeholder="Enter your email address" data-members-email>
+                <button class="epcl-button submit absolute" type="submit">Get Started<span class="loader"></span></button>
+            </div>                
+            <p class="error-detail" data-members-error></p>
+            <p class="success-message">Subscription was sent successfully, check your email</p>
+        </form>
+    </div>
+    {{#if @site.cover_image}}
+        <div class="right grid-45 tablet-grid-45 mobile-grid-60">
+            <img src="{{img_url @site.cover_image size="l"}}" fetchpriority="high" decoding="async" alt="{{@site.title}}" class="hero-image fullwidth" />
+        </div>
+    {{/if}}
+</div>
 
-    <div class="post-feed gh-feed">
+<!-- Trending Topics Section -->
+<div class="section section np-bottom">
+    <section class="epcl-popular-categories">
+        <div class="grid-container grid-medium np-mobile">
+            <h2 class="title bordered medium textcenter">
+                {{> "icons/trending-icon"}}
+                Trending Topics
+            </h2>
+            <div class="epcl-flex bg-box section">
+                <div class="left epcl-flex grid-60 np-mobile">
+                    {{#get "tags" limit="6" include="count.posts" order="count.posts desc"}}
+                        {{#foreach tags}}
+                            <div class="item grid-20 mobile-grid-33 ctag-{{slug}} overlay-effect">  
+                                <div class="image-container">
+                                    {{#if feature_image}}
+                                        <span class="category-image ctag-{{slug}}">
+                                            <img fetchpriority="low" decoding="async" loading="lazy" src="{{img_url feature_image size="s"}}" alt="{{name}}" class="cover" />
+                                        </span>
+                                    {{else}}
+                                        <span class="category-image ctag-{{slug}}"></span>
+                                    {{/if}}
+                                    <span class="epcl-decoration-counter">{{count.posts}}</span>    
+                                    <span class="overlay"></span>                                      
+                                </div> 
+                                <h3 class="title usmall">{{name}}</h3>    
+                                <a href="{{url}}" class="full-link"><span class="screen-reader-text">{{name}}</span></a> 
+                            </div>
+                        {{/foreach}}
+                    {{/get}}
+                </div>
+                <div class="right grid-40 hide-on-mobile hide-on-tablet">
+                    <span class="fw-bold">or...</span>
+                    <a href="{{@site.url}}" class="epcl-button">Explore All</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Main Content with Sidebar -->
+<div class="sticky-container large-section np-bottom grid-container">
+    {{> "sidebar"}}
+    
+    <div class="articles classic grid-70 tablet-grid-70">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
     </div>
-
-</main>
 </div>

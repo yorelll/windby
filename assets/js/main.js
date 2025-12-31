@@ -3,6 +3,7 @@ $(function () {
     cover();
     pagination(true);
     player();
+    zentoInit();
 });
 
 function cover() {
@@ -102,5 +103,31 @@ function player() {
 
         playerAudio[0].playbackRate = playerSpeed;
         speedButton.text(playerSpeed + 'x');
+    });
+}
+
+function zentoInit() {
+    'use strict';
+    
+    // Sidebar toggle functionality
+    jQuery('.toggle-title').on('click', function() {
+        var item = jQuery(this).closest('.item');
+        item.toggleClass('open');
+    });
+    
+    // Back to top button
+    var backToTop = jQuery('<button id="back-to-top">↑</button>');
+    jQuery('body').append(backToTop);
+    
+    jQuery(window).on('scroll', function() {
+        if (jQuery(this).scrollTop() > 300) {
+            backToTop.addClass('show');
+        } else {
+            backToTop.removeClass('show');
+        }
+    });
+    
+    backToTop.on('click', function() {
+        jQuery('html, body').animate({ scrollTop: 0 }, 500);
     });
 }

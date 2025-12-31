@@ -2,46 +2,87 @@
 
 {{#post}}
 
-<main class="site-main">
-    <article class="{{post_class}} single">
-
-        {{#if og_description}}
-            <div class="gh-outer">
-                {{> "player"}}
-            </div>
-        {{else}}
-            <header class="post-header gh-canvas">
-                {{> "post-meta"}}
-                <h1 class="post-title">{{title}}</h1>
-                {{> "feature-image"}}
+<article class="{{post_class}} single">
+    
+    <div class="grid-container">
+        <div class="bg-box section">
+            <header class="post-header">
+                {{#primary_tag}}
+                    <div class="tags fill-color">
+                        <a href="{{url}}" class="ctag ctag-{{slug}}">{{name}}</a>
+                    </div>
+                {{/primary_tag}}
+                
+                <h1 class="main-title title large">{{title}}</h1>
+                
+                <div class="meta epcl-flex" style="gap: 20px; margin-top: 20px;">
+                    <time class="meta-info" datetime="{{date format="YYYY-MM-DD"}}">
+                        {{> "icons/calendar-icon"}}
+                        {{date format="MMM DD, YYYY"}}
+                    </time>
+                    
+                    <div class="min-read meta-info">
+                        {{> "icons/reading-icon"}}
+                        {{reading_time minute=(t "1 min read") minutes=(t "% min read")}}
+                    </div>
+                    
+                    {{#primary_author}}
+                        <a href="{{url}}" class="author">
+                            {{#if profile_image}}
+                                <img class="author-image" src="{{img_url profile_image size="s"}}" alt="{{name}}">
+                            {{/if}}
+                            <span class="author-name">{{name}}</span>
+                        </a>
+                    {{/primary_author}}
+                </div>
+                
+                {{#if feature_image}}
+                    <div style="margin-top: 30px;">
+                        <img src="{{img_url feature_image size="xl"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" style="width: 100%; border-radius: var(--epcl-medium-border-radius);">
+                    </div>
+                {{/if}}
             </header>
-        {{/if}}
 
-        <div class="post-content gh-content gh-canvas">
-            {{content}}
-        </div>
-
-        <div class="gh-canvas">
-            <div class="author-list">
-                <h3 class="author-list-title">
-                    {{#if og_description}}主持人：{{else}}作者：{{/if}}
-                </h3>
-                {{#foreach authors}}
-                    {{> "author-box"}}
-                {{/foreach}}
+            <div class="post-content text" style="margin-top: 40px; font-size: 17px; line-height: 1.8;">
+                {{content}}
             </div>
+
+            {{#if tags}}
+                <div class="post-tags" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--epcl-border-color);">
+                    <div class="tags">
+                        {{#foreach tags}}
+                            <a href="{{url}}" class="ctag ctag-{{slug}}">{{name}}</a>
+                        {{/foreach}}
+                    </div>
+                </div>
+            {{/if}}
+
+            {{#if authors}}
+                <div class="author-list" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--epcl-border-color);">
+                    <h3 class="title medium">About the Author{{#if authors.[1]}}s{{/if}}</h3>
+                    {{#foreach authors}}
+                        <div class="author-box" style="display: flex; gap: 20px; margin-top: 20px;">
+                            {{#if profile_image}}
+                                <img src="{{img_url profile_image size="m"}}" alt="{{name}}" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover;">
+                            {{/if}}
+                            <div style="flex: 1;">
+                                <h4 class="title small"><a href="{{url}}" style="text-decoration: none; color: var(--epcl-main-text-color);">{{name}}</a></h4>
+                                {{#if bio}}<p style="color: var(--epcl-light-text-color); margin: 10px 0 0;">{{bio}}</p>{{/if}}
+                            </div>
+                        </div>
+                    {{/foreach}}
+                </div>
+            {{/if}}
+
             {{#if comments}}
-                <section class="gh-comments">
-                    <header class="gh-comments-header">
-                        <h3 class="gh-comments-title author-list-title">评论区：</h3>
-                        {{comment_count class="gh-comments-count"}}
-                    </header>
+                <section class="comments-section" style="margin-top: 60px;">
+                    <h3 class="title medium">Comments</h3>
                     {{comments title="" count=false}}
                 </section>
             {{/if}}
         </div>
+    </div>
 
-    </article>
-</main>
+</article>
 
 {{/post}}

@@ -1,0 +1,39 @@
+<footer id="footer">
+    <div class="footer-inner">
+        <div class="footer-content">
+            <div class="footer-logo">
+                {{#if @site.logo}}
+                    <a href="{{@site.url}}">
+                        <img src="{{@site.logo}}" alt="{{@site.title}}">
+                    </a>
+                {{/if}}
+            </div>
+            
+            <nav class="footer-nav">
+                {{navigation type="secondary"}}
+            </nav>
+            
+            <div class="footer-social">
+                {{#if @custom.email}}
+                    <a href="mailto:{{@custom.email}}" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                        {{> "icons/email"}}
+                    </a>
+                {{/if}}
+                {{#if @custom.qq}}
+                    <a href="tencent://message/?uin={{@custom.qq}}" target="_blank" rel="noopener noreferrer" aria-label="QQ">
+                        {{> "icons/qq"}}
+                    </a>
+                {{/if}}
+                <a href="{{#if @custom.rss_link}}{{@custom.rss_link}}{{else}}{{@site.url}}/rss{{/if}}" target="_blank" rel="noopener noreferrer" aria-label="RSS">
+                    {{> "icons/rss"}}
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                {{@site.title}} © {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+            </div>
+        </div>
+    </div>
+</footer>
