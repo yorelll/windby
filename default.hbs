@@ -30,39 +30,21 @@
                         {{/if}}
                     </a>
                 </div>
-                <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
+                <button class="gh-search gh-icon-btn" aria-label="搜索本站" data-ghost-search>{{> "icons/search"}}</button>
                 <button class="gh-burger" aria-label="Toggle menu"></button>
             </div>
 
             <nav class="gh-head-menu">
                 {{navigation}}
-                {{#unless @site.members_enabled}}
-                    {{#match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{/unless}}
+                {{#match @custom.navigation_layout "Stacked"}}
+                    <button class="gh-search gh-icon-btn" aria-label="搜索本站" data-ghost-search>{{> "icons/search"}}</button>
+                {{/match}}
             </nav>
 
             <div class="gh-head-actions">
-                {{#unless @site.members_enabled}}
-                    {{^match @custom.navigation_layout "Stacked"}}
-                        <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    {{/match}}
-                {{else}}
-                    <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
-                    <div class="gh-head-members">
-                        {{#unless @member}}
-                            {{#unless @site.members_invite_only}}
-                                <a class="gh-head-link" href="#/portal/signin" data-portal="signin">Sign in</a>
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signup" data-portal="signup">Subscribe</a>
-                            {{else}}
-                                <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/signin" data-portal="signin">Sign in</a>
-                            {{/unless}}
-                        {{else}}
-                            <a class="gh-head-btn gh-btn gh-primary-btn" href="#/portal/account" data-portal="account">Account</a>
-                        {{/unless}}
-                    </div>
-                {{/unless}}
+                {{^match @custom.navigation_layout "Stacked"}}
+                    <button class="gh-search gh-icon-btn" aria-label="搜索本站" data-ghost-search>{{> "icons/search"}}</button>
+                {{/match}}
             </div>
         </div>
     </header>
@@ -90,22 +72,16 @@
     <footer class="gh-foot gh-outer">
         <div class="gh-foot-inner gh-inner">
             <div class="subscribe{{#if is_popup}} popup{{/if}}">
-                {{#if @custom.apple_podcasts_link}}
-                    <a href="{{@custom.apple_podcasts_link}}" class="subscribe-link" target="_blank" rel="noopener noreferrer">
-                        {{> "icons/apple"}}
-                        <span class="subscribe-text">Apple</span>
+                {{#if @custom.email}}
+                    <a href="mailto:{{@custom.email}}" class="subscribe-link" target="_blank" rel="noopener noreferrer">
+                        {{> "icons/email"}}
+                        <span class="subscribe-text">Email</span>
                     </a>
                 {{/if}}
-                {{#if @custom.google_podcasts_link}}
-                    <a href="{{@custom.google_podcasts_link}}" class="subscribe-link" target="_blank" rel="noopener noreferrer">
-                        {{> "icons/google"}}
-                        <span class="subscribe-text">Google</span>
-                    </a>
-                {{/if}}
-                {{#if @custom.spotify_link}}
-                    <a href="{{@custom.spotify_link}}" class="subscribe-link" target="_blank" rel="noopener noreferrer">
-                        {{> "icons/spotify"}}
-                        <span class="subscribe-text">Spotify</span>
+                {{#if @custom.qq}}
+                    <a href="tencent://message/?uin={{@custom.qq}}" class="subscribe-link" target="_blank" rel="noopener noreferrer">
+                        {{> "icons/qq"}}
+                        <span class="subscribe-text">QQ</span>
                     </a>
                 {{/if}}
                 <a href="{{#if @custom.rss_link}}{{@custom.rss_link}}{{else}}{{@site.url}}/rss{{/if}}" class="subscribe-link rss" target="_blank" rel="noopener noreferrer">
@@ -117,7 +93,7 @@
                 {{navigation type="secondary"}}
             </nav>
             <div class="gh-copyright">
-                {{@site.title}} © {{date format="YYYY"}}. Powered by <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a>
+                {{@site.title}} © {{date format="YYYY"}}. 由 <a href="https://ghost.org/" target="_blank" rel="noopener">Ghost</a> 强力驱动
             </div>
         </div>
     </footer>
