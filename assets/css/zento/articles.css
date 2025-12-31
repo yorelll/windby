@@ -60,14 +60,25 @@ article.classic-large .post-format-image {
 }
 
 /* Difficulty Rating */
+.difficulty {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.difficulty .name {
+    font-size: 13px;
+    color: var(--epcl-light-text-color);
+}
+
 .difficulty .rating {
     display: inline-flex;
     gap: 2px;
 }
 
 .difficulty .rating .star {
-    color: #ddd;
-    font-size: 16px;
+    color: #E5E7EB;
+    font-size: 14px;
 }
 
 .difficulty .rating.star-1 .star:nth-child(-n+1),
