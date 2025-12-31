@@ -1,0 +1,132 @@
+/* Zento Hero/Intro Section Styles */
+
+.intro-text {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 0;
+}
+
+.intro-text .left {
+    flex: 1;
+}
+
+.intro-text .right {
+    flex: 0 0 auto;
+}
+
+.intro-text .text {
+    margin-bottom: 30px;
+}
+
+.intro-text .title {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--epcl-light-text-color);
+    margin: 0;
+}
+
+.hero-image {
+    max-width: 100%;
+    border-radius: var(--epcl-large-border-radius);
+}
+
+/* Subscribe Form */
+.subscribe-form {
+    max-width: 500px;
+}
+
+.subscribe-form .title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.subscribe-form .form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.subscribe-form .inputbox {
+    width: 100%;
+    padding: 14px 20px;
+    border: 2px solid var(--epcl-border-color);
+    border-radius: var(--epcl-small-border-radius);
+    font-size: 15px;
+    font-family: var(--epcl-font-family);
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.subscribe-form .inputbox:focus {
+    border-color: var(--ghost-accent-color);
+}
+
+.subscribe-form .inputbox.large {
+    padding-right: 140px;
+}
+
+.subscribe-form .submit.absolute {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 24px;
+}
+
+.subscribe-form .loader {
+    display: none;
+}
+
+.subscribe-form .error-detail {
+    color: #f95353;
+    font-size: 13px;
+    margin: 5px 0 0;
+}
+
+.subscribe-form .success-message {
+    display: none;
+    color: #3aa9fd;
+    font-size: 14px;
+    margin: 10px 0 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .intro-text {
+        flex-direction: column;
+        gap: 30px;
+        padding: 40px 0;
+    }
+    
+    .intro-text .title {
+        font-size: 32px;
+    }
+    
+    .intro-text p {
+        font-size: 16px;
+    }
+    
+    .intro-text .right {
+        text-align: center;
+    }
+    
+    .subscribe-form .inputbox.large {
+        padding-right: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .subscribe-form .submit.absolute {
+        position: static;
+        transform: none;
+        width: 100%;
+    }
+}

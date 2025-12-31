@@ -1,15 +1,10 @@
-@import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
-@import "general/fonts.css";
-@import "general/vars.css";
-@import "site/layout.css";
-@import "site/header.css";
-@import "site/cover.css";
-@import "site/term.css";
-@import "site/subscribe.css";
-@import "site/footer.css";
-@import "site/player.css";
-@import "blog/post.css";
-@import "blog/feed.css";
-@import "blog/single.css";
-@import "blog/author.css";
-@import "misc/utilities.css";
+/* Zento Theme Styles */
+@import "zento/fonts.css";
+@import "zento/vars.css";
+@import "zento/base.css";
+@import "zento/header.css";
+@import "zento/hero.css";
+@import "zento/categories.css";
+@import "zento/sidebar.css";
+@import "zento/articles.css";
+@import "zento/footer.css";

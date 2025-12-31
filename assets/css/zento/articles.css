@@ -1,0 +1,192 @@
+/* Zento Article Styles */
+
+.articles.classic {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+article.classic-large {
+    position: relative;
+}
+
+article.classic-large .post-format-image {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Meta Data Column */
+.meta.meta-data {
+    flex: 0 0 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tags */
+.tags.fill-color a {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: var(--epcl-small-border-radius);
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tags a.ctag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+/* Meta Info */
+.meta-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--epcl-light-text-color);
+}
+
+.meta-info svg.icon {
+    flex-shrink: 0;
+}
+
+/* Difficulty Rating */
+.difficulty .rating {
+    display: inline-flex;
+    gap: 2px;
+}
+
+.difficulty .rating .star {
+    color: #ddd;
+    font-size: 16px;
+}
+
+.difficulty .rating.star-1 .star:nth-child(-n+1),
+.difficulty .rating.star-2 .star:nth-child(-n+2),
+.difficulty .rating.star-3 .star:nth-child(-n+3) {
+    color: var(--epcl-secondary-color);
+}
+
+/* Article Info Column */
+article.classic-large .info {
+    flex: 1;
+    padding-top: 0;
+}
+
+article.classic-large header {
+    margin-bottom: 15px;
+}
+
+article.classic-large .main-title {
+    font-family: var(--epcl-title-font-family);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+article.classic-large .main-title a {
+    color: var(--epcl-main-text-color);
+    text-decoration: none;
+    position: relative;
+}
+
+.post-excerpt {
+    color: var(--epcl-light-text-color);
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.post-excerpt p {
+    margin: 0;
+}
+
+/* Footer/Bottom Meta */
+footer.bottom {
+    border-top: 1px solid var(--epcl-border-color);
+    padding-top: 20px;
+}
+
+.meta.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta.bottom .tags {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+/* Author */
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--epcl-main-text-color);
+}
+
+.author-image {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Access Icons (Featured, etc) */
+.access-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--epcl-secondary-color);
+    margin-left: 10px;
+}
+
+.access-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    article.classic-large .post-format-image {
+        flex-direction: column;
+    }
+    
+    .meta.meta-data {
+        flex-direction: row;
+        flex: 1;
+        flex-wrap: wrap;
+    }
+    
+    .meta.bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .meta.inline {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+    }
+}

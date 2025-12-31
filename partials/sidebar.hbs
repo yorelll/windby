@@ -1,0 +1,42 @@
+<aside id="sidebar" class="enable-sticky grid-30 tablet-grid-30 hide-on-tablet hide-on-mobile">
+    
+    <div class="widget widget_epcl_tag_list grid-33 tablet-grid-50 mobile-grid-100">
+        <h3 class="widget-title title medium bordered">
+            {{> "icons/title-decoration"}}
+            <span>Topics Index</span>
+        </h3>
+        
+        {{#get "tags" limit="10" include="count.posts" order="count.posts desc"}}
+            {{#foreach tags}}
+                <div class="clear"></div>
+                <div class="item item-{{@number}} {{#if @first}}open{{/if}}">
+                    <h4 class="toggle-title underline-effect ctag ctag-{{slug}}">
+                        <span class="epcl-number">{{@number}}</span> 
+                        <a href="{{url}}" class="title small" data-id="ctag-{{slug}}">{{name}}</a>                    
+                    </h4>
+                    <span class="toggle-icon">
+                        <svg class="icon small" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" fill="currentColor"></path>
+                        </svg>
+                    </span>
+                    
+                    {{#get "posts" filter="tag:{{slug}}" limit="5"}}
+                        {{#if posts}}
+                            <ul class="post-list">
+                                {{#foreach posts}}
+                                    <li>
+                                        <span class="fw-semibold">{{@number}}.</span> 
+                                        <a href="{{url}}" data-id="{{slug}}">{{title}}</a>
+                                    </li>
+                                {{/foreach}}
+                            </ul>
+                        {{/if}}
+                    {{/get}}
+                </div>
+            {{/foreach}}
+        {{/get}}
+        
+        <div class="clear"></div>
+    </div>
+    
+</aside>

@@ -1,0 +1,52 @@
+<header id="header" class="minimalist enable-sticky">
+    <div class="menu-wrapper">
+        <div class="grid-container">
+            <div class="epcl-flex grid-wrapper">
+                
+                <!-- Main Navigation -->
+                <nav class="main-nav">      
+                    <ul class="menu">
+                        <li class="search-menu-item">
+                            <span class="link" data-ghost-search>
+                                {{> "icons/search-icon"}}
+                                <span class="hide-on-mobile">Quick Search...</span>
+                            </span>
+                        </li> 
+                    </ul>                  
+                </nav>
+
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="{{@site.url}}">
+                        {{#if @site.logo}}
+                            <img src="{{@site.logo}}" alt="{{@site.title}}" width="170" height="60" decoding="async">
+                        {{else}}
+                            {{@site.title}}
+                        {{/if}}
+                    </a>
+                </div>
+
+                <!-- Account/Actions -->
+                <div class="account underline-effect hide-on-mobile hide-on-tablet hide-on-desktop-sm">
+                    {{#unless @member}}
+                        <a href="#/portal/signin" class="link-button epcl-login" data-portal="signin">Login</a>
+                        <a href="#/portal/signup" class="epcl-button" data-portal="signup">Subscribe</a>
+                    {{else}}
+                        <a href="#/portal/account" class="link-button" data-portal="account">Account</a>
+                    {{/unless}}
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="open-menu">
+                    {{> "icons/menu-icon"}}
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            
+            <div class="clear"></div>
+        </div>
+    </div>
+    
+    <div class="clear"></div>
+</header>

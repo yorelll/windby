@@ -1,19 +1,30 @@
 {{!< default}}
 
-<div class="gh-outer">
-<main class="site-main gh-inner">
-
-    {{#author}}
-        <div class="term">
-            {{> "author-box"}}
-        </div>
-    {{/author}}
-
-    <div class="post-feed gh-feed">
+<div class="grid-container">
+    <div class="bg-box section" style="margin-top: 40px;">
+        <header class="author-header textcenter">
+            {{#author}}
+                {{#if profile_image}}
+                    <div style="margin-bottom: 30px;">
+                        <img src="{{img_url profile_image size="m"}}" alt="{{name}}" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto;">
+                    </div>
+                {{/if}}
+                <h1 class="title large">{{name}}</h1>
+                {{#if bio}}
+                    <p style="color: var(--epcl-light-text-color); font-size: 16px; margin-top: 15px;">{{bio}}</p>
+                {{/if}}
+                {{#if website}}
+                    <p style="margin-top: 15px;">
+                        <a href="{{website}}" class="link-button" target="_blank" rel="noopener noreferrer">Website</a>
+                    </p>
+                {{/if}}
+            {{/author}}
+        </header>
+    </div>
+    
+    <div class="articles classic" style="margin-top: 40px;">
         {{#foreach posts}}
             {{> "loop"}}
         {{/foreach}}
     </div>
-
-</main>
 </div>

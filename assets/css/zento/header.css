@@ -1,0 +1,150 @@
+/* Zento Header Styles */
+
+#header {
+    position: relative;
+    z-index: 1000;
+}
+
+#header.minimalist {
+    background: var(--epcl-boxes-background-color);
+    border-bottom: 1px solid var(--epcl-border-color);
+}
+
+#header.enable-sticky {
+    position: sticky;
+    top: 0;
+}
+
+.menu-wrapper {
+    padding: 20px 0;
+}
+
+#header .epcl-flex {
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    flex: 1;
+    text-align: center;
+}
+
+.logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.logo img {
+    max-height: 60px;
+    width: auto;
+}
+
+/* Navigation */
+.main-nav {
+    flex: 1;
+}
+
+.main-nav ul.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav ul.menu li {
+    margin: 0;
+}
+
+.main-nav ul.menu li .link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--epcl-main-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul.menu li .link:hover {
+    color: var(--ghost-accent-color);
+}
+
+/* Account / Actions */
+.account {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.epcl-login {
+    color: var(--epcl-main-text-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Mobile Menu */
+.open-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.open-menu .icon {
+    width: 28px;
+    height: 28px;
+}
+
+/* Screen reader text */
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 1024px) {
+    .hide-on-desktop-sm { display: none !important; }
+}
+
+@media screen and (max-width: 768px) {
+    .menu-wrapper {
+        padding: 15px 0;
+    }
+    
+    .main-nav {
+        order: 3;
+        flex: 0 0 100%;
+        margin-top: 15px;
+        display: none;
+    }
+    
+    .logo {
+        order: 1;
+        flex: 1;
+        text-align: left;
+    }
+    
+    .logo img {
+        max-height: 40px;
+    }
+    
+    .open-menu {
+        order: 2;
+        display: block;
+    }
+    
+    .account {
+        display: none;
+    }
+}
