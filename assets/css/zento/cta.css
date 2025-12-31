@@ -1,0 +1,123 @@
+/* Zento CTA Section Styles */
+
+.epcl-cta {
+    position: relative;
+    margin-top: 60px;
+    padding: 60px 40px;
+    overflow: hidden;
+}
+
+.epcl-cta.no-border-radius {
+    border-radius: 0;
+}
+
+.epcl-cta .epcl-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.epcl-cta .left {
+    flex: 1;
+}
+
+.epcl-cta .right {
+    flex: 1;
+}
+
+.epcl-cta .title.ularge {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.epcl-cta .title.no-margin {
+    margin: 0 0 15px;
+}
+
+.epcl-cta p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--epcl-light-text-color);
+    margin: 0;
+}
+
+.epcl-cta .textcenter {
+    text-align: center;
+}
+
+.epcl-cta .epcl-button.black {
+    background: var(--epcl-main-text-color);
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: var(--epcl-small-border-radius);
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.epcl-cta .epcl-button.black.large {
+    font-size: 16px;
+}
+
+.epcl-cta .epcl-button.black:hover {
+    background: var(--ghost-accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Background decorations */
+.epcl-cta .bg,
+.epcl-cta .bg2 {
+    position: absolute;
+    width: 142px;
+    height: 226px;
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.epcl-cta .bg {
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.epcl-cta .bg2 {
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.epcl-cta .main-color {
+    fill: var(--ghost-accent-color);
+}
+
+.epcl-cta .secondary-color {
+    fill: var(--epcl-secondary-color);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .epcl-cta {
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .epcl-cta .epcl-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .epcl-cta .title.ularge {
+        font-size: 24px;
+    }
+    
+    .epcl-cta .bg,
+    .epcl-cta .bg2 {
+        display: none;
+    }
+}

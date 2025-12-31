@@ -50,6 +50,7 @@
     cursor: pointer;
     position: relative;
     padding-right: 30px;
+    margin: 0;
 }
 
 .toggle-title .epcl-number {
@@ -63,13 +64,19 @@
     font-weight: 700;
     font-size: 14px;
     flex-shrink: 0;
+    background: var(--ghost-accent-color);
 }
 
 .toggle-title a {
     color: var(--epcl-main-text-color);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
+    flex: 1;
+}
+
+.toggle-title a:hover {
+    color: var(--ghost-accent-color);
 }
 
 .toggle-icon {
@@ -78,6 +85,7 @@
     top: 50%;
     transform: translateY(-50%);
     transition: transform 0.3s ease;
+    color: var(--epcl-light-text-color);
 }
 
 .toggle-icon svg {
@@ -93,7 +101,7 @@
 .post-list {
     list-style: none;
     margin: 15px 0 0;
-    padding: 0;
+    padding: 0 0 0 42px;
     display: none;
 }
 
@@ -115,6 +123,10 @@
 
 .post-list li a:hover {
     color: var(--ghost-accent-color);
+}
+
+.post-list li .fw-semibold {
+    color: var(--epcl-main-text-color);
 }
 
 /* Sticky Container */

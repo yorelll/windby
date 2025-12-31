@@ -133,3 +133,24 @@ div.tags.fill-color a.ctag-tech,
 .ctag-tech.overlay-effect .image-container:before { 
     background: #4775ff !important; 
 }
+
+/* Additional tag colors for common categories */
+.ctag-1-fundamentals .epcl-number,
+.ctag-1-fundamentals.epcl-button,
+.siblings .ctag-1-fundamentals,
+div.tags a.ctag-1-fundamentals:before,
+div.tags.fill-color a.ctag-1-fundamentals,
+.category-image.ctag-1-fundamentals,
+.epcl-post-carousel article.ctag-1-fundamentals { 
+    background: #8B5CF6 !important; 
+}
+.ctag-1-fundamentals.overlay-effect .image-container:before { 
+    background: #8B5CF6 !important; 
+}
+
+/* Default tag colors for any slug not specifically defined */
+.ctag .epcl-number,
+div.tags a.ctag:before,
+div.tags.fill-color a.ctag {
+    background: var(--ghost-accent-color);
+}

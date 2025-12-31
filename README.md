@@ -5,10 +5,13 @@ A modern Ghost theme based on the Zento design, featuring a clean and minimalist
 **Features:**
 - Clean, minimalist design inspired by Zento
 - Responsive layout optimized for all devices
-- Trending topics section with custom tag colors
-- Sticky sidebar with collapsible topics index
-- Classic article card layout with metadata
-- Hero section with newsletter subscription
+- Hero section with HTML support for highlighted text and emoji
+- Trending topics section with custom tag colors and overlay effects
+- Sticky sidebar with collapsible topics index and numbered badges
+- Classic article card layout with difficulty ratings
+- "Join to our community" CTA section
+- Three-column footer with Follow Us, Quick Links, and Newsletter sections
+- Back-to-top button with smooth scroll
 - SVG icon system
 - Member authentication support
 - Full Ghost 6.x compatibility
@@ -50,9 +53,9 @@ npm run zip
 
 ## Partials
 - `partials/header.hbs` - Minimalist sticky header
-- `partials/footer.hbs` - Footer with social links
-- `partials/sidebar.hbs` - Topics index sidebar
-- `partials/loop.hbs` - Article card template
+- `partials/footer.hbs` - Footer with CTA and three-column layout
+- `partials/sidebar.hbs` - Topics index sidebar with numbered badges
+- `partials/loop.hbs` - Article card with difficulty rating
 - `partials/icons/` - SVG icon components
 
 ## Styles
@@ -61,10 +64,11 @@ npm run zip
 - `assets/css/zento/base.css` - Base styles and grid system
 - `assets/css/zento/header.css` - Header styles
 - `assets/css/zento/hero.css` - Hero section styles
-- `assets/css/zento/categories.css` - Category/tag styles
-- `assets/css/zento/sidebar.css` - Sidebar styles
-- `assets/css/zento/articles.css` - Article card styles
-- `assets/css/zento/footer.css` - Footer styles
+- `assets/css/zento/categories.css` - Category/tag styles with overlay effects
+- `assets/css/zento/sidebar.css` - Sidebar with numbered badges
+- `assets/css/zento/articles.css` - Article card with difficulty ratings
+- `assets/css/zento/cta.css` - Call-to-action section styles
+- `assets/css/zento/footer.css` - Footer with three-column layout
 
 ## Assets
 - DM Sans (400, 700) - Body font

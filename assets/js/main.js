@@ -110,24 +110,37 @@ function zentoInit() {
     'use strict';
     
     // Sidebar toggle functionality
-    jQuery('.toggle-title').on('click', function() {
+    jQuery('.toggle-title').on('click', function(e) {
+        // Don't prevent default if clicking on the actual link
+        if (!jQuery(e.target).is('a') && !jQuery(e.target).closest('a').length) {
+            e.preventDefault();
+            var item = jQuery(this).closest('.item');
+            item.toggleClass('open');
+        }
+    });
+    
+    // Also handle clicks on toggle icon
+    jQuery('.toggle-icon').on('click', function(e) {
+        e.preventDefault();
         var item = jQuery(this).closest('.item');
         item.toggleClass('open');
     });
     
     // Back to top button
-    var backToTop = jQuery('<button id="back-to-top">↑</button>');
-    jQuery('body').append(backToTop);
+    var backToTop = jQuery('#back-to-top');
     
-    jQuery(window).on('scroll', function() {
-        if (jQuery(this).scrollTop() > 300) {
-            backToTop.addClass('show');
-        } else {
-            backToTop.removeClass('show');
-        }
-    });
-    
-    backToTop.on('click', function() {
-        jQuery('html, body').animate({ scrollTop: 0 }, 500);
-    });
+    if (backToTop.length) {
+        jQuery(window).on('scroll', function() {
+            if (jQuery(this).scrollTop() > 300) {
+                backToTop.addClass('show');
+            } else {
+                backToTop.removeClass('show');
+            }
+        });
+        
+        backToTop.on('click', function(e) {
+            e.preventDefault();
+            jQuery('html, body').animate({ scrollTop: 0 }, 500);
+        });
+    }
 }
