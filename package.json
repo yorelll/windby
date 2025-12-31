@@ -1,5 +1,5 @@
 {
-    "name": "wave",
+    "name": "windby",
     "description": "A Ghost theme",
     "version": "1.0.0",
     "private": true,
@@ -8,9 +8,8 @@
     },
     "license": "MIT",
         "author": {
-            "name": "Ghost Foundation",
-            "email": "hello@ghost.org",
-            "url": "https://ghost.org"
+            "name": "yorelll",
+            "email": "yorelll@163.com"
         },
     "keywords": [
         "ghost",
@@ -57,17 +56,13 @@
                 "options": ["Modern sans-serif", "Elegant serif"],
                 "default": "Modern sans-serif"
             },
-            "apple_podcasts_link": {
+            "email": {
                 "type": "text",
-                "default": "https://podcasts.apple.com/"
+                "default": "yorelll@163.com"
             },
-            "google_podcasts_link": {
+            "qq": {
                 "type": "text",
-                "default": "https://podcasts.google.com/"
-            },
-            "spotify_link": {
-                "type": "text",
-                "default": "https://open.spotify.com/"
+                "default": "1808483575"
             },
             "rss_link": {
                 "type": "text"
