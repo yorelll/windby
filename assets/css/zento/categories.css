@@ -4,6 +4,31 @@
     margin: 40px 0;
 }
 
+.epcl-popular-categories .bg-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.epcl-popular-categories .bg-box .left {
+    flex: 1;
+}
+
+.epcl-popular-categories .bg-box .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
+    text-align: center;
+}
+
+.epcl-popular-categories .bg-box .right span {
+    font-size: 20px;
+    color: var(--epcl-light-text-color);
+}
+
 .epcl-popular-categories .item {
     position: relative;
     padding: 15px;
@@ -89,6 +114,10 @@
     margin: 0;
 }
 
+.epcl-popular-categories .item h3.title.usmall {
+    font-size: 13px;
+}
+
 .epcl-popular-categories .full-link {
     position: absolute;
     top: 0;
@@ -103,5 +132,9 @@
 @media screen and (max-width: 768px) {
     .epcl-popular-categories .item {
         padding: 10px;
+    }
+    
+    .epcl-popular-categories .bg-box {
+        flex-direction: column;
     }
 }

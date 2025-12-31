@@ -24,6 +24,10 @@ body {
     max-width: 960px;
 }
 
+.grid-small {
+    max-width: 720px;
+}
+
 .epcl-flex {
     display: flex;
     flex-wrap: wrap;
@@ -42,6 +46,9 @@ body {
 .grid-60 { width: 60%; }
 .grid-70 { width: 70%; }
 .grid-100 { width: 100%; }
+
+/* Special grid sizes for categories */
+.grid-20 { width: 20%; }
 
 /* Background Box */
 .bg-box {
@@ -194,10 +201,11 @@ body {
     .tablet-grid-45 { width: 45%; }
     .tablet-grid-50 { width: 50%; }
     .tablet-grid-55 { width: 55%; }
+    .tablet-grid-70 { width: 70%; }
 }
 
 @media screen and (max-width: 768px) {
-    .grid-40, .grid-45, .grid-50, .grid-55, .grid-60 { width: 100%; }
+    .grid-20, .grid-40, .grid-45, .grid-50, .grid-55, .grid-60 { width: 100%; }
     .hide-on-mobile { display: none !important; }
     .mobile-grid-33 { width: 33.333%; }
     .mobile-grid-60 { width: 60%; }
